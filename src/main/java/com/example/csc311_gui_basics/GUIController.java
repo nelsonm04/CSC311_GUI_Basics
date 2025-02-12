@@ -6,9 +6,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class HelloController {
+public class GUIController {
     @FXML
     private Label welcomeText;
+
+    @FXML
+    private Label nelson;
+
     @FXML
     private TextField yourName;
     @FXML
@@ -18,10 +22,12 @@ public class HelloController {
     protected void onHelloButtonClick() {
         String name= yourName.getText();
         welcomeText.setText("Welcome " + name );
+        nelson.rotateProperty().setValue(180);
     }
     @FXML
     public void initialize() {
         Image image = new Image(getClass().getResource("/com/example/csc311_gui_basics/bunny.jpeg").toExternalForm());
         bunnyPic.setImage(image);
     }
+
 }
